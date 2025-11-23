@@ -1,0 +1,183 @@
+/* ----------- GLOBAL PAGE STYLING ----------- */
+
+body {
+    background: linear-gradient(135deg, #6a85b6, #bac8e0);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+
+/* ----------- RESPONSIVE GLASS CARD ----------- */
+
+.container {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    width: 450px;
+    max-width: 90%;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.22);
+    animation: floatCard 5s infinite ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+
+/* ----------- RESPONSIVE HEADING ----------- */
+
+h2, .title {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 650;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-top: -10px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    animation: fadeDown 0.8s ease-out;
+}
+
+
+/* ----------- REMOVE WHITE SHINE EFFECT ----------- */
+/* (Removed h2::after + button::after completely) */
+
+
+/* ----------- INPUT FIELDS ----------- */
+
+label {
+    font-weight: 600;
+    color: #222;
+    display: block;
+    margin-bottom: 6px;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    border: 1px solid #c5c5c5;
+    background: #f9f9f9;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+select:focus, input:focus {
+    border-color: #4a73ff;
+    background: #ffffff;
+    box-shadow: 0 0 12px rgba(54, 98, 255, 0.5);
+    transform: scale(1.03);
+}
+
+
+/* ----------- PREMIUM BUTTON ----------- */
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #355cdb, #4a73ff);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    margin-top: 5px;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* ----------- RESULT POP ANIMATION ----------- */
+
+.result-success,
+.result-fail {
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 19px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    animation: popIn 0.5s ease-out;
+}
+
+.result-success { background: #d1fad1; color: #276b29; }
+.result-fail { background: #ffd1d1; color: #7e1818; }
+
+
+/* ----------- CARD FLOAT ANIMATION ----------- */
+
+@keyframes floatCard {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* ----------- HEADING ANIMATION ----------- */
+
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}
+
+
+/* ----------- RESULT POP-IN ----------- */
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* ----------- RESPONSIVE DESIGN BREAKPOINTS ----------- */
+
+/* For phones */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 22px;
+        padding: 14px;
+    }
+
+    button {
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .container {
+        padding: 28px;
+    }
+}
+
+/* For very small phones */
+@media (max-width: 360px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 24px;
+    }
+}
